@@ -2,8 +2,6 @@
 #include <cmath>
 using namespace std;
 
-//add exceptions for input a and b in functions and for ch in main
-
 double f(double x) {
 	return (3 * x * x - 6 * x * cos(x));
 }
@@ -84,7 +82,7 @@ jump1:
 	}
 }
 
-//dichotomy method - cheack
+//dichotomy method
 void m3() {
 	double a, b;
 	int k = 1;
