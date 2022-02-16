@@ -93,18 +93,18 @@ void m3() {
 	cin >> a;
 	cout << "Input - b \n>> ";
 	cin >> b;
-	double x, e = 0.1, d;
-	d = 0, 1 * e;
+	double x1, x2, e = 0.1, d;
+	d = 0.1 * e;
 	cout << k << ") x = " << (a + b) / 2 << "\t f(x) = " << f((a + b) / 2) << endl;
 	do
 	{
-		x = (a + b) / 2;
-		if (f(x - d) < f(x + d))
-			a = x;
-		else b = x;
+		x1 = ((a + b) / 2) - d;
+		x2 = ((a + b) / 2) + d;
+		if (f(x1) < f(x2)) b = x2;
+		else a = x1;
 		k++;
 		cout << k << ") x = " << (a + b) / 2 << "\t f(x) = " << f((a + b) / 2) << endl;
-	} while (fabs(b - a) > e);
+	} while (abs(b - a) > e);
 	cout << endl << "Min x = " << (a + b) / 2 << "\t f(x) = " << f((a + b) / 2) << endl;
 }
 
@@ -142,7 +142,7 @@ double m4() {
 	goto jump1;
 }
 
-//midpoint method - doesn't work
+//midpoint method
 double m5() {
 	double a, b;
 	cout << endl;
@@ -163,7 +163,7 @@ jump2:
 		return 0;
 	}
 	k++;
-	if (f1(x) < 0) a = x; else b = x;
+	if (f1(x) > 0) b = x; else a = x;
 	goto jump2;
 }
 
